@@ -1,3 +1,5 @@
+This project run on the Linux ubuntu20 5.15.0-94-generic #104~20.04.1-Ubuntu SMP Tue Jan 16 13:34:09 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+
 sudo apt install python3.8-venv install vim openssh-client openssh-server libsdl2-dev git
 
 python3 -m venv basic-weather-app-gtk
