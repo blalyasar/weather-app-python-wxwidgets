@@ -17,12 +17,17 @@ with open(file_path, "r") as file:
     data = json.load(file)
 print(data)
 
-# 81 ILE ISTEK ATMAMAK ICIN LIMIT
-NUMBER_OF_CITY = 10
+# 
+# # for test api rate limit# 81 ILE ISTEK AT
+# MAMAK ICIN LIMIT
+# NUMBER_OF_CITY = 10
+
 cities = []
 for item in data:
-    if item["id"] == NUMBER_OF_CITY:
-        break
+    # 
+    # # for test api rate limit# 
+    # if item["id"] == NUMBER_OF_CITY:
+    # #     break
     # print(f"Name: {item['name']},
     # Age: {item['age']}")
     print(item["name"])
@@ -98,7 +103,7 @@ class WeatherPage( wx.Frame ):
         self.Bind(wx.EVT_TIMER, self.auto_refresh_weather, self.timer)
 
         # THREAD arayuzde olustur...
-        self.timer.Start(100000)  # 600000 milisaniye (10 dakika)
+        self.timer.Start(30000)  # 600000 milisaniye (10 dakika)
 
         # hava durumu func yenıleme...
         self.refresh_weather()
@@ -136,8 +141,10 @@ class WeatherPage( wx.Frame ):
             print(self.list_temperature_labels)
             # -1  importtant plaka 1den baslar 
             self.list_temperature_labels[ int(city[0]) -1  ].SetLabel(f"Temperature: {temperature_celsius} °C")
-            if city[0]  == NUMBER_OF_CITY :
-                break
+            
+            # for test api rate limit
+            # if city[0]  == NUMBER_OF_CITY :
+            #     break
             
 
 
