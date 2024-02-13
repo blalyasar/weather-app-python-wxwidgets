@@ -74,7 +74,7 @@ class LoginPage(wx.Frame):
         # Kullanıcı adı ve parola doğrulaması (örnek amaçlı sadece)
         
         if check_credentials(self.email, self.password):
-            wx.MessageBox("Girdiler Bos değil... Kayit Ok")
+            wx.MessageBox("Girdiler Bos değil... Login Ok")
             self.Hide()
             weather_frame = WeatherPage(None, -1, title='Weather Ekranı',)
             # Center it with the 'Centre' method
