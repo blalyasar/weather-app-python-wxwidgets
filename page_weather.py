@@ -20,14 +20,14 @@ print(data)
 # 
 # # for test api rate limit# 81 ILE ISTEK AT
 # MAMAK ICIN LIMIT
-# NUMBER_OF_CITY = 10
+NUMBER_OF_CITY = 10
 
 cities = []
 for item in data:
     # 
     # # for test api rate limit# 
     # if item["id"] == NUMBER_OF_CITY:
-    # #     break
+    #      break
     # print(f"Name: {item['name']},
     # Age: {item['age']}")
     print(item["name"])
@@ -103,9 +103,9 @@ class WeatherPage( wx.Frame ):
         self.Bind(wx.EVT_TIMER, self.auto_refresh_weather, self.timer)
 
         # THREAD arayuzde olustur...
-        self.timer.Start(30000)  # 600000 milisaniye (10 dakika)
+        self.timer.Start(40000)  # 40s Veriler gec gelebilir....
 
-        # hava durumu func yenıleme...
+        # hava durumu func yenıleme... 1KEZ
         self.refresh_weather()
 
     def refresh_weather(self):
@@ -142,7 +142,7 @@ class WeatherPage( wx.Frame ):
             # -1  importtant plaka 1den baslar 
             self.list_temperature_labels[ int(city[0]) -1  ].SetLabel(f"Temperature: {temperature_celsius} °C")
             
-            # for test api rate limit
+            # # for test api rate limit
             # if city[0]  == NUMBER_OF_CITY :
             #     break
             
