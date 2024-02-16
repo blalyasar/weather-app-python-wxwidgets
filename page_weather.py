@@ -111,11 +111,11 @@ class WeatherPage( wx.Frame ):
     def refresh_weather(self):
      
  
-
+        api = None
         for  city in  cities:
             print(city)
             # api key ONLY  02-03.2024 to do add config file etc...
-            response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city[2]}&appid=eef452dbaecb031a04d46c7ad88eda57&units=metric")
+            response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city[2]}&appid={api}&units=metric")
             data = response.json()
 
             print(data)
